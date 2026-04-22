@@ -1,0 +1,15 @@
+[package]
+name = "o-sfu-benchmarks"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+o-sfu = { path = "../o-sfu" }
+
+[dev-dependencies]
+criterion = "0.7"
+
+[[bench]]
+name = "rtc_udp_demux"
+harness = false
