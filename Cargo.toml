@@ -13,3 +13,7 @@ criterion = "0.7"
 [[bench]]
 name = "rtc_udp_demux"
 harness = false
+
+[[bench]]
+name = "performance_hardening"
+harness = false

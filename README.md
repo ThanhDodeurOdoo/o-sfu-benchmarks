@@ -20,4 +20,5 @@ Run one benchmark target:
 
 ```bash
 cargo bench --bench rtc_udp_demux
+cargo bench --bench performance_hardening
 ```
