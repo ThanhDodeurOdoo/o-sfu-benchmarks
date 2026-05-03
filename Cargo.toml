@@ -5,7 +5,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-o-sfu = { path = "../o-sfu" }
+o-sfu = { path = "../o-sfu", features = ["testing-transport"] }
+o-sfu-rfc = { path = "../o-sfu/rfc" }
 
 [dev-dependencies]
 criterion = "0.7"
@@ -16,4 +17,8 @@ harness = false
 
 [[bench]]
 name = "performance_hardening"
+harness = false
+
+[[bench]]
+name = "simd_packet_hotpath"
 harness = false

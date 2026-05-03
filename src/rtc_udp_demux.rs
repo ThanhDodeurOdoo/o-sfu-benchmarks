@@ -5,7 +5,7 @@ use std::{
 };
 
 use o_sfu::testing::transport::{
-    RemoteAddrDemux, SessionId, TransportSessionKey, test_transport_session_key,
+    RemoteAddrDemux, TransportSessionKey, UserId, test_transport_session_key,
 };
 
 const BENCHMARK_CHANNEL_RUNTIME_ID: u64 = 1;
@@ -148,7 +148,7 @@ impl RtcUnknownSourceRecoveryBenchmarkFixture {
 }
 
 fn benchmark_session_key(idx: usize) -> Option<TransportSessionKey> {
-    let session_id = SessionId::Integer(i64::try_from(idx).ok()?);
+    let session_id = UserId::Integer(i64::try_from(idx).ok()?);
     let connection_id = BENCHMARK_FIRST_CONNECTION_ID.saturating_add(u64::try_from(idx).ok()?);
     Some(test_transport_session_key(
         BENCHMARK_CHANNEL_RUNTIME_ID,

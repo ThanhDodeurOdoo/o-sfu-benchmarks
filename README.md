@@ -1,14 +1,11 @@
 # o-sfu-benchmarks
 
-Criterion microbenchmarks for `o-sfu`.
+microbenchmarks for `o-sfu`
 
-This repo is intentionally separate from `../o-sfu` so the main server workspace
-does not need Criterion, benchmark-only cargo features, or runtime-specific
-fixture modules.
+this is mostly a testbed/playground to test ideas.
 
-The benchmarks depend on `../o-sfu` through a relative path and only reuse the
-hidden `o_sfu::testing::transport` exports for pure transport data structures
-that are already useful to deterministic tests.
+The benchmarks depend on `../o-sfu` through a relative path, if you want to use
+it out of the box, both repos need to be in the same parent folder.
 
 ## Run
 
@@ -21,4 +18,6 @@ Run one benchmark target:
 ```bash
 cargo bench --bench rtc_udp_demux
 cargo bench --bench performance_hardening
+cargo bench --bench simd_packet_hotpath
+# ...
 ```

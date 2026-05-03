@@ -2,7 +2,7 @@ use std::{collections::BTreeMap, hint::black_box};
 
 use o_sfu::testing::{
     concurrency::SourcePolicyDirtyState,
-    transport::{SessionId, TransportSessionKey, test_transport_session_key},
+    transport::{TransportSessionKey, UserId, test_transport_session_key},
 };
 
 const CHANNEL_INSTANCE_ID: u64 = 11;
@@ -273,6 +273,6 @@ fn benchmark_session_key(index: usize) -> TransportSessionKey {
         CHANNEL_INSTANCE_ID,
         MEDIA_WORKER_ID,
         u64::try_from(index).unwrap_or(0).saturating_add(1),
-        SessionId::Integer(i64::try_from(index).unwrap_or(0).saturating_add(1)),
+        UserId::Integer(i64::try_from(index).unwrap_or(0).saturating_add(1)),
     )
 }

@@ -1221,13 +1221,12 @@ dependencies = [
  "bitflags",
  "futures-util",
  "hmac",
+ "o-sfu-cluster",
+ "o-sfu-core",
  "o-sfu-protocol",
  "o-sfu-rfc",
  "o-sfu-router",
  "o-sfu-telemetry",
- "opentelemetry",
- "opentelemetry-otlp",
- "opentelemetry_sdk",
  "serde",
  "serde_json",
  "sha2",
@@ -1239,8 +1238,6 @@ dependencies = [
  "tokio-tungstenite",
  "tokio-util",
  "tracing",
- "tracing-opentelemetry",
- "tracing-subscriber",
  "uuid",
 ]
 
@@ -1250,12 +1247,52 @@ version = "0.1.0"
 dependencies = [
  "criterion",
  "o-sfu",
+ "o-sfu-rfc",
+]
+
+[[package]]
+name = "o-sfu-cluster"
+version = "0.3.0"
+dependencies = [
+ "serde",
+ "thiserror",
+]
+
+[[package]]
+name = "o-sfu-core"
+version = "0.3.0"
+dependencies = [
+ "bitflags",
+ "futures-util",
+ "o-sfu-model",
+ "o-sfu-rfc",
+ "o-sfu-router",
+ "o-sfu-telemetry",
+ "serde",
+ "serde_json",
+ "str0m",
+ "thiserror",
+ "time",
+ "tokio",
+ "tokio-util",
+ "tracing",
+ "uuid",
+]
+
+[[package]]
+name = "o-sfu-model"
+version = "0.3.0"
+dependencies = [
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
 name = "o-sfu-protocol"
 version = "0.3.0"
 dependencies = [
+ "o-sfu-model",
+ "o-sfu-rfc",
  "serde",
  "serde-wasm-bindgen",
  "serde_json",
@@ -1279,6 +1316,24 @@ dependencies = [
 
 [[package]]
 name = "o-sfu-telemetry"
+version = "0.3.0"
+dependencies = [
+ "anyhow",
+ "o-sfu-model",
+ "o-sfu-telemetry-macros",
+ "opentelemetry",
+ "opentelemetry-otlp",
+ "opentelemetry_sdk",
+ "serde",
+ "serde_json",
+ "time",
+ "tracing",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "o-sfu-telemetry-macros"
 version = "0.3.0"
 dependencies = [
  "proc-macro2",
