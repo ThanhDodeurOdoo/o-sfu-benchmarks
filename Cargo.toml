@@ -5,7 +5,7 @@ edition = "2024"
 publish = false
 
 [dependencies]
-o-sfu = { path = "../o-sfu", features = ["testing-transport"] }
+o-sfu-core = { path = "../o-sfu/core" }
 o-sfu-rfc = { path = "../o-sfu/rfc" }
 
 [dev-dependencies]
