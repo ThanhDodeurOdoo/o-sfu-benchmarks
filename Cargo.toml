@@ -22,3 +22,7 @@ harness = false
 [[bench]]
 name = "simd_packet_hotpath"
 harness = false
+
+[[bench]]
+name = "consumer_packet_gate"
+harness = false
