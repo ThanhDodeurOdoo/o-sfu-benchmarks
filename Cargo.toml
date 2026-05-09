@@ -26,3 +26,19 @@ harness = false
 [[bench]]
 name = "consumer_packet_gate"
 harness = false
+
+[[bench]]
+name = "bitrate_counter"
+harness = false
+
+[[bench]]
+name = "local_vp8_fanout"
+harness = false
+
+[[bench]]
+name = "source_policy_refresh"
+harness = false
+
+[[bench]]
+name = "packet_metrics"
+harness = false
