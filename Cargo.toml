@@ -5,11 +5,12 @@ edition = "2024"
 publish = false
 
 [dependencies]
-o-sfu-core = { path = "../o-sfu/core" }
+o-sfu-core = { path = "../o-sfu/core", features = ["packet-loop-verification"] }
 o-sfu-rfc = { path = "../o-sfu/rfc" }
 
 [dev-dependencies]
 criterion = "0.7"
+dhat = "0.3.3"
 
 [[bench]]
 name = "rtc_udp_demux"
@@ -41,4 +42,12 @@ harness = false
 
 [[bench]]
 name = "packet_metrics"
+harness = false
+
+[[bench]]
+name = "pure_packet_loop_turn"
+harness = false
+
+[[bench]]
+name = "pure_packet_loop_allocations"
 harness = false
