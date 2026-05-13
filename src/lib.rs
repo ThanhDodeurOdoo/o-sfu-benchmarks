@@ -1,9 +1,9 @@
 pub mod bitrate_counter;
 pub mod consumer_packet_gate;
 pub mod local_vp8_fanout;
+pub mod packet_loop_cold_path;
 pub mod packet_metrics;
 pub mod performance_hardening;
-pub mod pure_packet_loop;
 pub mod rtc_udp_demux;
 pub mod simd_packet_hotpath;
 pub mod source_policy_refresh;

@@ -5,8 +5,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-o-sfu-core = { path = "../o-sfu/core", features = ["packet-loop-verification"] }
-o-sfu-rfc = { path = "../o-sfu/rfc" }
+o-sfu-core = { path = "../o-sfu/crates/core", features = ["testing-transport"] }
+o-sfu-rfc = { path = "../o-sfu/crates/rfc" }
 
 [dev-dependencies]
 criterion = "0.7"
@@ -45,9 +45,5 @@ name = "packet_metrics"
 harness = false
 
 [[bench]]
-name = "pure_packet_loop_turn"
-harness = false
-
-[[bench]]
-name = "pure_packet_loop_allocations"
+name = "packet_loop_cold_path"
 harness = false
