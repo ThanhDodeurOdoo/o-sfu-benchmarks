@@ -5,8 +5,11 @@ edition = "2024"
 publish = false
 
 [dependencies]
-o-sfu-core = { path = "../o-sfu/crates/core", features = ["testing-transport"] }
-o-sfu-rfc = { path = "../o-sfu/crates/rfc" }
+o-sfu-core = { path = "../worktrees/o-sfu/simd/crates/core", features = [
+    "internal-benchmarks",
+    "testing-transport",
+] }
+o-sfu-rfc = { path = "../worktrees/o-sfu/simd/crates/rfc" }
 
 [dev-dependencies]
 criterion = "0.7"
@@ -46,4 +49,8 @@ harness = false
 
 [[bench]]
 name = "packet_loop_cold_path"
+harness = false
+
+[[bench]]
+name = "routing_miss_fingerprint"
 harness = false

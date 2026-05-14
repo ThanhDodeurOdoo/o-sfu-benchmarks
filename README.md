@@ -5,8 +5,8 @@ microbenchmarks for `o-sfu`
 this repository owns runnable hot-path benchmarks
 some targets are exploratory
 
-the benchmarks depend on `../o-sfu` through a relative path, if you want to use
-it out of the box, both repos need to be in the same parent folder.
+the benchmarks depend on the active `o-sfu` SIMD worktree through a relative
+path so `routing_miss_fingerprint` measures the production helper being changed
 
 `packet_loop_cold_path` benchmarks branch-shape hypotheses for the current
 packet-loop hot path
@@ -26,5 +26,6 @@ cargo bench --bench rtc_udp_demux
 cargo bench --bench performance_hardening
 cargo bench --bench simd_packet_hotpath
 cargo bench --bench packet_loop_cold_path
+cargo bench --bench routing_miss_fingerprint
 # ...
 ```
